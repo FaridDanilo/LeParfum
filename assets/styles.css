@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main:#f5f5f5;
+    --bg-second:#ffffff;
+    --bg-hover:#f7f7f7;
+    --border:#e6e6e6;
+    --bg-button:#282828;
+    --light-red-color: #ff5757;
+    --color-text-hover:#262626;
+
+    --transition: all 0.3s ease;
+
+}
+
+body {
+    font-family: "EB Garamond", serif;
+    padding: 18px;
+    background-color: var(--bg-main);
+}
+
+main {
+    position: relative;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+
+main .slogan {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: max-content;
+    font-size: 4rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.slogan p {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.main-content {
+    display: flex;
+    align-items: center; justify-content: center;
+    /* margin: 15px; */
+    height: 50rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.main-content img {
+    width: 100%;
+    filter: brightness(0.7);
+}
+
+.section.parfum-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card-parfum-container {
+    display: flex;
+    flex-grow: 1;
+    max-width: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.card-parfum-content {
+    position: relative;
+    display: flex;
+    width: 320px;
+}
+
+.card-parfum-content svg {
+    position: absolute;
+    bottom: 0;
+    margin: 8px;
+    z-index: 1;
+    cursor: pointer;
+    color: var(--bg-second);
+}
+
+.card-parfum-content svg:hover {
+    color: var(--light-red-color);
+}
+
+.card-parfum-content img {
+    object-fit: cover;
+    width: 100%; height: 280px;
+    transition: var(--transition);
+}
+
+.card-parfum-content img:hover {
+    filter: brightness(0.6);
+    transform: scale(1.1);
+}
