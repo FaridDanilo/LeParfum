@@ -11,36 +11,38 @@
 
 <header>
     <nav>
-        <div class="nav-content">
-            <div class="menu-toggle">
+        <div class="navbar-container">
+            <div class="menu-toggle" id="openMenu">
                 <i data-feather="menu"></i>
             </div>
-            
-            <div class="logo">
-                <img src="assets/img/logo.png" alt="logo">
-            </div>
-            
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
 
-            <div class="btn-logins-content">
-                <button class="btn-sign-in">Sign In</button>
-                <button class="btn-sign-up">Sign Up</button>
+            <a href="#home" class="navbar-logo">
+                <img src="assets/img/logo.png" alt="LeParfum logo">
+            </a>
+
+            <div class="navbar-mobile-container">
+                <div class="navbar-mobile-content">
+                    <ul class="navbar-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <a href="public/login.html" class="btn-sign-in">Sign In</a>
+                        <a href="public/register.html" class="btn-sign-up">Sign Up</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
 <body>
-    <main>
+    <main id="home">
         <div class="main-content">
-            <img src="assets/img/bg.jpg" alt="bg">
+            <img src="assets/img/bg.jpg" alt="Front Page">
             <div class="slogan">
                 <h1>Parfume Rikolino</h1>
                 <p>¿Te apesta esa concha? con <strong>LeParfum</strong> no tendras que preocuparte mas</p>
@@ -120,12 +122,21 @@
             </div>
 
             <div class="text-block">
-                <div class="history">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus esse eum molestiae nulla blanditiis commodi atque sit delectus nam debitis, sequi nihil praesentium necessitatibus, magnam ab ducimus similique laboriosam? Ipsum!</div>
-    
-                <div class="founding">Lorem, ipsum dolor sit amet consectetur adipisicing 2018 elit. Velit sequi distinctio maiores.</div>
+                <div class="history">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus esse eum
+                    molestiae nulla blanditiis commodi atque sit delectus nam debitis, sequi nihil praesentium
+                    necessitatibus, magnam ab ducimus similique laboriosam? Ipsum!</div>
 
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed pariatur provident, optio voluptatem enim! Dignissimos consequatur placeat repellendus error ipsa praesentium doloremque, quo voluptate autem officia repudiandae, blanditiis sequi!
-                Cumque commodi ad voluptas delectus autem ullam magnam tempora laborum! Dolore non animi, soluta nostrum eum tempore sunt pariatur, magnam quisquam enim illo placeat, nulla odit laudantium. Maiores, blanditiis molestiae. Praesentium, dignissimos tempora ducimus, facere fuga accusantium esse nulla provident laudantium a eligendi nam cupiditate ab id tempore eius modi dolores eum ex neque, voluptates excepturi consectetur magnam! Architecto, nemo.</span>
+                <div class="founding">Lorem, ipsum dolor sit amet consectetur adipisicing 2018 elit. Velit sequi
+                    distinctio maiores.</div>
+
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed pariatur provident, optio
+                    voluptatem enim! Dignissimos consequatur placeat repellendus error ipsa praesentium doloremque, quo
+                    voluptate autem officia repudiandae, blanditiis sequi!
+                    Cumque commodi ad voluptas delectus autem ullam magnam tempora laborum! Dolore non animi, soluta
+                    nostrum eum tempore sunt pariatur, magnam quisquam enim illo placeat, nulla odit laudantium.
+                    Maiores, blanditiis molestiae. Praesentium, dignissimos tempora ducimus, facere fuga accusantium
+                    esse nulla provident laudantium a eligendi nam cupiditate ab id tempore eius modi dolores eum ex
+                    neque, voluptates excepturi consectetur magnam! Architecto, nemo.</span>
             </div>
 
 
@@ -175,7 +186,70 @@
                     <!-- <button class="btn-add-cart">Add to Cart</button> -->
                 </div>
             </div>
-            
+
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="assets/img/soon.jpg" alt="Soon">
+                    <!-- <span class="badge">New</span> -->
+                </div>
+                <div class="featured-info">
+                    <h3>Nombre Producto</h3>
+                    <p class="brand">Nombre Marca</p>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="count">(125 reseñas)</span>
+                    </div>
+                    <p class="description">Breve descripción de las características y notas del producto.</p>
+                    <div class="price-section">
+                        <span class="price">$89.99</span>
+                        <span class="original-price"><s><small>$119.99</small></s></span>
+                    </div>
+                    <!-- <button class="btn-add-cart">Add to Cart</button> -->
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="assets/img/soon.jpg" alt="Soon">
+                    <!-- <span class="badge">New</span> -->
+                </div>
+                <div class="featured-info">
+                    <h3>Nombre Producto</h3>
+                    <p class="brand">Nombre Marca</p>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="count">(125 reseñas)</span>
+                    </div>
+                    <p class="description">Breve descripción de las características y notas del producto.</p>
+                    <div class="price-section">
+                        <span class="price">$89.99</span>
+                        <span class="original-price"><s><small>$119.99</small></s></span>
+                    </div>
+                    <!-- <button class="btn-add-cart">Add to Cart</button> -->
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="assets/img/soon.jpg" alt="Soon">
+                    <!-- <span class="badge">New</span> -->
+                </div>
+                <div class="featured-info">
+                    <h3>Nombre Producto</h3>
+                    <p class="brand">Nombre Marca</p>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="count">(125 reseñas)</span>
+                    </div>
+                    <p class="description">Breve descripción de las características y notas del producto.</p>
+                    <div class="price-section">
+                        <span class="price">$89.99</span>
+                        <span class="original-price"><s><small>$119.99</small></s></span>
+                    </div>
+                    <!-- <button class="btn-add-cart">Add to Cart</button> -->
+                </div>
+            </div>
+
             <div class="featured-card">
                 <div class="featured-image">
                     <img src="assets/img/soon.jpg" alt="Soon">
@@ -280,69 +354,6 @@
                     <!-- <button class="btn-add-cart">Add to Cart</button> -->
                 </div>
             </div>
-            
-            <div class="featured-card">
-                <div class="featured-image">
-                    <img src="assets/img/soon.jpg" alt="Soon">
-                    <!-- <span class="badge">New</span> -->
-                </div>
-                <div class="featured-info">
-                    <h3>Nombre Producto</h3>
-                    <p class="brand">Nombre Marca</p>
-                    <div class="rating">
-                        <span class="stars">★★★★★</span>
-                        <span class="count">(125 reseñas)</span>
-                    </div>
-                    <p class="description">Breve descripción de las características y notas del producto.</p>
-                    <div class="price-section">
-                        <span class="price">$89.99</span>
-                        <span class="original-price"><s><small>$119.99</small></s></span>
-                    </div>
-                    <!-- <button class="btn-add-cart">Add to Cart</button> -->
-                </div>
-            </div>
-
-            <div class="featured-card">
-                <div class="featured-image">
-                    <img src="assets/img/soon.jpg" alt="Soon">
-                    <!-- <span class="badge">New</span> -->
-                </div>
-                <div class="featured-info">
-                    <h3>Nombre Producto</h3>
-                    <p class="brand">Nombre Marca</p>
-                    <div class="rating">
-                        <span class="stars">★★★★★</span>
-                        <span class="count">(125 reseñas)</span>
-                    </div>
-                    <p class="description">Breve descripción de las características y notas del producto.</p>
-                    <div class="price-section">
-                        <span class="price">$89.99</span>
-                        <span class="original-price"><s><small>$119.99</small></s></span>
-                    </div>
-                    <!-- <button class="btn-add-cart">Add to Cart</button> -->
-                </div>
-            </div>
-            
-            <div class="featured-card">
-                <div class="featured-image">
-                    <img src="assets/img/soon.jpg" alt="Soon">
-                    <!-- <span class="badge">New</span> -->
-                </div>
-                <div class="featured-info">
-                    <h3>Nombre Producto</h3>
-                    <p class="brand">Nombre Marca</p>
-                    <div class="rating">
-                        <span class="stars">★★★★★</span>
-                        <span class="count">(125 reseñas)</span>
-                    </div>
-                    <p class="description">Breve descripción de las características y notas del producto.</p>
-                    <div class="price-section">
-                        <span class="price">$89.99</span>
-                        <span class="original-price"><s><small>$119.99</small></s></span>
-                    </div>
-                    <!-- <button class="btn-add-cart">Add to Cart</button> -->
-                </div>
-            </div>
 
             <div class="featured-card">
                 <div class="featured-image">
@@ -427,7 +438,7 @@
                     <!-- <button class="btn-add-cart">Add to Cart</button> -->
                 </div>
             </div>
-            
+
             <div class="featured-card">
                 <div class="featured-image">
                     <img src="assets/img/soon.jpg" alt="Soon">
@@ -462,7 +473,7 @@
         <div class="sect-presentation">
             <img src="assets/img/lines-design/line-left.png" alt="Decorative line left">
             <h2>Shop by Category</h2>
-            <img src="assets/img/lines-design/line-right.png" alt="Decorative line right">           
+            <img src="assets/img/lines-design/line-right.png" alt="Decorative line right">
         </div>
 
         <div class="categories-grid">
@@ -598,20 +609,22 @@
             - Benefits of subscribing (e.g., "Get 10% off your first order")
             Consider adding: GDPR compliance notice, loading/success states
     -->
-    <section id="newsletter" class="sect newsletter-container">
+    <!-- <section id="newsletter" class="sect newsletter-container">
         <div class="newsletter-content">
             <h2>Subscribe to Our Newsletter</h2>
-            <!-- <p>Get exclusive deals, new arrivals, and fragrance tips delivered to your inbox</p> -->
+            <p>Get exclusive deals, new arrivals, and fragrance tips delivered to your inbox</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit" class="btn-subscribe">Subscribe</button>
             </form>
             <p class="privacy-notice">We'll never share your email. Unsubscribe anytime.</p>
         </div>
-    </section>
+    </section> -->
 
     <script src="https://unpkg.com/feather-icons"></script>
     <script>feather.replace()</script>
+
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 

@@ -1,44 +1,76 @@
 @media (max-width: 800px) {
+    /*? Navbar START */
     nav {
         display: flex;
     }
-
-    .menu-toggle {
+    
+    nav .menu-toggle {
         position: absolute;
         right: 20px;
         padding: 8px;
-        display: flex;
+        display: block;
         border-radius: 4px;
+        z-index: 1;
         border: 1px solid var(--border);
     }
-
-    .menu-toggle svg {
+    
+    nav .menu-toggle svg {
         display: flex;
         color: var(--color-text);
     }
-
-    .menu-toggle:hover {
+    
+    nav .menu-toggle:hover {
         background-color: var(--bg-hover);
     }
 
-    .nav-links,
+    .navbar-mobile-container {
+        position: absolute;
+        top: 0; right: 0;
+        width: 300px; height: 100vh;
+        transition: var(--transition);
+        transform: translate(300px);
+        background-color: var(--bg-second);
+    }
+    
+    .navbar-mobile-container.active {
+        transform: translate(0);
+    }
+
+    .navbar-mobile-content {
+        display: flex; flex-direction: column;
+        height: 100%;
+        align-items: center; justify-content: space-evenly;
+    }
+
+    .navbar-links {
+        height: 350px;
+        justify-content: space-between;
+    }
+
+    .navbar-links {
+        display: flex; flex-direction: column;
+        gap: 8px;
+    }
+    
+    /* .nav-links,
     .btn-logins-content {
         display: none;
-    }   
-
+    }    */
+    
     .slogan {
         display: flex; flex-wrap: wrap;
         flex-direction: column;
     }
-
+    
     .slogan h1 {
         font-size: 2rem;
     }
-
+    
     .slogan p {
         display: none;
         font-size: 1.2rem;
     }
+    /*? Navbar END */
 
     .about-content {
         display: flex;
