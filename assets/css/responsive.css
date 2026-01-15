@@ -1,45 +1,50 @@
 @media (max-width: 800px) {
+
     /*? Navbar START */
     nav {
         display: flex;
     }
-    
+
     nav .menu-toggle {
         position: absolute;
-        right: 20px;
+        right: 12px;
         padding: 8px;
         display: block;
         border-radius: 4px;
         z-index: 1;
         border: 1px solid var(--border);
     }
-    
+
     nav .menu-toggle svg {
         display: flex;
         color: var(--color-text);
     }
-    
+
     nav .menu-toggle:hover {
         background-color: var(--bg-hover);
     }
 
     .navbar-mobile-container {
         position: absolute;
-        top: 0; right: 0;
-        width: 300px; height: 100vh;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh;
         transition: var(--transition);
-        transform: translate(300px);
+        transform: translate(500px);
         background-color: var(--bg-second);
     }
-    
+
     .navbar-mobile-container.active {
         transform: translate(0);
     }
 
     .navbar-mobile-content {
-        display: flex; flex-direction: column;
+        display: flex;
+        flex-direction: column;
         height: 100%;
-        align-items: center; justify-content: space-evenly;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     .navbar-links {
@@ -48,37 +53,68 @@
     }
 
     .navbar-links {
-        display: flex; flex-direction: column;
+        display: flex;
+        flex-direction: column;
         gap: 8px;
     }
-    
+
     /* .nav-links,
     .btn-logins-content {
         display: none;
     }    */
-    
+
     .slogan {
-        display: flex; flex-wrap: wrap;
-        flex-direction: column;
+        /* width: 25ch;
+        background-color: red; */
     }
-    
+
     .slogan h1 {
         font-size: 2rem;
     }
-    
+
     .slogan p {
-        display: none;
+        /* display: none; */
         font-size: 1.2rem;
     }
+
     /*? Navbar END */
 
-    .about-content {
-        display: flex;
-        align-items: center; justify-content: center;
-        text-align: center;
+    /*? Universal START  */
+
+    body {
+        padding: 0;
     }
 
-    .about-content img {
-        display: none;
+    .main-content {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
     }
+
+    /*? Universal END  */
+
+
+    /*? Sect About us START  */
+    .about-content {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*? Sect About us END  */
+
+
+    /*? Sect Reviesw  */
+    .reviews-content {
+        gap: 12px;
+    }
+
+    /*? Sect Reviesw  */
+
+
+    /*? Sect Newsletter START  */
+    /* .newsletter-form {
+        flex-direction: column;
+    } */
+    /*? Sect Newsletter END  */
+
 }

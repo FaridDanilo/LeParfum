@@ -17,3 +17,12 @@ navbarLinks.forEach(link => {
         navbar.classList.remove('active');
     })
 });
+
+
+const total = 5;
+
+const containers = document.querySelectorAll('.stars-rating');
+
+containers.forEach(container => {
+    container.innerHTML = '<i class="fa-solid fa-star"></i>'.repeat(total);
+});

@@ -13,10 +13,14 @@
     --bg-hover:#f7f7f7;
     --border:#e6e6e6;
     --bg-light-purple:#4d06d1;
-    --bg-button:#282828;
+    --bg-button:#30261b;
+    --bg-button-hover:#30261bce;
     --light-red-color: #ff5757;
 
-    --color-text:#28282b;
+    --color-yellow: #f98800;
+
+    --color-primary-text:#28282b;
+    --color-secondary-text:#464649cf;
     --color-text-hover:#424242;
 
     --transition: all 0.3s ease;
@@ -29,18 +33,12 @@ body {
     background-color: var(--bg-main);
 }
 
-main {
-    position: relative;
-    display: flex;
-    align-items: center; justify-content: center;
-}
-
 main .slogan {
     position: absolute;
     top: 50%; left: 50%;
-    width: max-content;
-    font-size: 4rem;
-    color: var(--color-text);
+    width: 100%;
+    font-size: clamp(1.1rem, 1.2vw, 3.5rem);
+    color: var(--bg-second);
     text-align: center;
     transform: translate(-50%, -50%);
 }
@@ -62,7 +60,7 @@ main .slogan {
 
 .main-content img {
     width: 100%;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 }
 
 section:nth-child(even) {
@@ -72,21 +70,44 @@ section:nth-child(even) {
 section {
     margin-top: 12px;
     border-radius: 8px;
+    padding: 18px;
 }
 
 section h2 {
+    font-size: clamp(1rem, 1.5vw, 3.5rem);
     margin: 12px;
+    color: var(--color-primary-text);
+    text-transform: uppercase;
 }
 
 .sect-presentation {
     display: flex;
     align-items: center; justify-content: center;
     width: 100%;
-    color: var(--color-text);
 }
 
 .sect-presentation img {
     width: 4rem; height: 1.2rem;
+}
+
+.card-content img,
+.featured-card img {
+    filter: brightness(0.8);
+}
+
+.feather-heart,
+.feather-shopping-cart {
+    color: var(--bg-second);
+    transition: var(--transition);
+}
+
+.feather-heart:hover,
+.feather-shopping-cart:hover {
+    transform: scale(1.1);
+}
+
+.feather-heart:hover {
+    color: var(--light-red-color);
 }
 /*? ========== UNIVERSAL END ========== */
 
@@ -95,11 +116,10 @@ section h2 {
 nav {
     position: fixed;
     z-index: 1;
-    top: 0; left: 0;
-    width: 100%;
-    /*TODO: margin: 0 8px; */
-    /*TODO: border-radius: 8px; */
-    padding: 0 18px;
+    top: 0; left: 0; right: 0;
+    /* margin: 8px; */
+    /* border-radius: 8px; */
+    padding-right: 12px;
     border: 1px solid var(--border);
     background-color: var(--bg-second);
 }
@@ -107,6 +127,7 @@ nav {
 .navbar-container {
     display: flex;
     align-items: center; justify-content: space-between;
+    height: 65px;
 }
 
 .menu-toggle {
@@ -141,7 +162,7 @@ nav {
 .navbar-actions a {
     text-decoration: none;
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--color-primary-text);
 }
 
 .navbar-links a:hover {
@@ -171,11 +192,7 @@ nav {
 
 
 /*? ========== SECTION PRODUCTS START ========== */
-.sect.parfum-container {
-    display: flex;
-}
-
-.parfum-card-container {
+.parfum-cards-content {
     display: flex; flex-wrap: wrap;
     gap: 8px;
 }
@@ -183,37 +200,42 @@ nav {
 .card-content {
     position: relative;
     display: flex;
+    width: 300px;
     flex-grow: 1;
-    width: 250px;
     border-radius: 8px;
+    cursor: pointer;
     overflow: hidden;
+    transition: var(--transition);
     border: 1px solid var(--border);
 }
 
 .card-content img {
     width: 100%;
-    cursor: pointer;
     transition: var(--transition);
-    /* object-fit: conta; */
 }
 
 .card-content img:hover {
-    filter: brightness(0.6);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-.card-content svg {
+.card-content
+.feather-heart,
+.feather-shopping-cart {
     position: absolute;
-    bottom: 0;
-    margin: 8px;
-    cursor: pointer;
-    color: var(--border);
+    width: 20px; height: 20px;
     transition: var(--transition);
+    margin: 8px;
+    /* color: var(--bg-second); */
 }
 
-.card-content svg:hover {
-    transform: scale(0.9);
-    color: var(--light-red-color);
+.card-content 
+.feather-heart {
+    right: 0;
+}
+
+.card-content 
+.feather-shopping-cart {
+    top: 25px; right: 1px;
 }
 /*? ========== SECTION PRODUCTS END ========== */
 
@@ -231,7 +253,7 @@ nav {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     align-items: start;
 }
@@ -245,7 +267,11 @@ nav {
 
 
 /*? ========== SECTION FEATURED START ========== */
-.featured-content {
+.featured-cards-content .sect-presentation {
+    margin-top: 2.5rem;
+}
+
+.featured, .unlimited-edition {
     display: flex; flex-wrap: wrap;
     gap: 8px;
 }
@@ -253,30 +279,246 @@ nav {
 .featured-card {
     flex-grow: 1;
     width: 250px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-second);
+}
+
+.featured-img {
+    position: relative;
+    display: flex;
+    height: 100%;
     overflow: hidden;
+    border-radius: 6px;
+}
+
+.featured-img img {
+    width: 100%; height: 325px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.featured-img img:hover {
+    transform: scale(1.2);
+}
+
+.featured-img 
+.feather-heart,
+.feather-shopping-cart {
+    position: absolute;
+    width: 20px; height: 20px;
+    margin: 8px;
+    /* color: var(--bg-button); */
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.featured-img .feather-heart {
+    top: 0; right: 0;
+}
+
+.featured-img .feather-shopping-cart {
+    top: 25px; right: 1px;
+}
+
+.featured-img .price {
+    position: absolute;
+    margin: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    color: var(--bg-second);
+    background-color: var(--bg-button);
+}
+
+.featured-info h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    color: var(--color-primary-text);
+}
+
+.featured-footer p {
+    color: var(--color-secondary-text);
+}
+
+.featured-footer {
+    margin-top: 12px;
+}
+
+.featured-footer p {
+    margin-bottom: 12px;
+    min-height: 4.5rem;
+}
+
+.featured-footer button {
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: var(--bg-main);
+    transition: var(--transition);
+    background-color: var(--bg-button);
     border: 1px solid var(--border);
 }
 
-.featured-image img {
-    display: flex;
-    width: 100%;
-}
-
-.featured-info {
-    padding: 14px;
-    background-color: var(--bg-second);
+.featured-footer button:hover {
+    background-color: var(--bg-button-hover);
 }
 /*? ========== SECTION FEATURED END ========== */
 
 
+/*? ========== SECTION WHY CHOOSE US? START ========== */
+.benefits-container {
+    display: flex; flex-wrap: wrap;
+    gap: 8px;
+}
+
+.benefit-card {
+    flex-grow: 1;
+    border-radius: 14px;
+    padding: 2.2rem 1.8rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--border);
+    background-color: var(--bg-second);
+}
+
+.benefit-card h3 {
+    color: var(--color-text-hover);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: .4px;
+    margin-bottom: .6rem;
+}
+
+.benefit-card p {
+    color: var(--color-secondary-text);
+    font-size: .9rem;
+    line-height: 1.6;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.4rem auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+}
+
+.benefit-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+    color: var(--color-primary-text);
+}
+/*? ========== SECTION WHY CHOOSE US? END ========== */
 
 
-/*? ========== START ========== */
-/*? ========== END ========== */
+/*? ========== SECTION CLIENTS SAY START ========== */
+.review-card {
+    position: relative;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    padding: 18px;
+    border-radius: 8px;
+    background-color: var(--bg-light);
+}
+
+.review-card .avatar {
+    display: flex; 
+    align-items: center;
+    gap: 8px;
+}
+
+.review-card img {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+}
+
+.reviews-content {
+    display: flex; flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.reviews-content .stars-rating {
+    position: absolute;
+    top: 0; right: 0;
+    margin: 12px;
+    color: var(--color-yellow);
+}
+
+.review-text {
+    color: var(--color-primary-text);
+    margin-top: 2rem;
+}
+/*? ========== SECTION CLIENTS SAY END ========== */
 
 
+/*? ========== SECTION NEWSLETTER START ========== */
+.newsletter-container {
+    display: flex; flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 
+.newsletter-content {
+    display: flex;
+}
+
+.newsletter-form {
+    display: flex; 
+    flex-direction: row;
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group i {
+    position: absolute;
+    left: 25px;
+    top: 51%;
+    font-size: 18px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.form-group input {
+    outline: none;
+    padding: 18px 18px 18px 50px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.newsletter-form button {
+    padding: 0 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--bg-second);
+    background-color: var(--bg-button);
+    border: 1px solid var(--border);
+}
+
+.newsletter-form button:hover {
+    background-color: var(--bg-button-hover);
+}
+/*? ========== SECTION NEWSLETTER END ========== */
 
 
 
@@ -334,7 +576,7 @@ nav {
 
 .img-content a {
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--color-primary-text);
 }
 
 .img-content img {
@@ -365,8 +607,7 @@ form {
     grid-template-columns: repeat(2, 1fr);
 }
 
-input, 
-.btn-form-submit {
+input, .btn-form-submit {
     width: 100%;
     border: 2px solid var(--border);
     border-radius: 5px;
@@ -380,6 +621,7 @@ input:focus {
 .btn-form-submit {
     color: var(--bg-second);
     border: none;
+    cursor: pointer;
     background-color: var(--bg-light-purple);
 }
 /*? ========== FORM LOGIN/REGISTER END ========== */
