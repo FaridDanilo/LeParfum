@@ -594,11 +594,11 @@ main .slogan {
     width: 100%;
 }
 
-.form-group {
+.newsletter-form .form-group {
     position: relative;
 }
 
-.form-group i {
+.newsletter-form .form-group i {
     position: absolute;
     left: 25px;
     top: 51%;
@@ -607,7 +607,7 @@ main .slogan {
     pointer-events: none;
 }
 
-.form-group input {
+.newsletter-form .form-group input {
     outline: none;
     padding: 18px 18px 18px 50px;
     border: 1px solid var(--border);
@@ -617,6 +617,7 @@ main .slogan {
 
 .newsletter-form button {
     padding: 0 25px;
+    margin-left: 12px;
     border-radius: 8px;
     cursor: pointer;
     color: var(--bg-second);
