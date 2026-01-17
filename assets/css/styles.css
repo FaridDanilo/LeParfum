@@ -13,15 +13,14 @@
     --bg-hover:#f7f7f7;
     --border:#e6e6e6;
     --bg-light-purple:#4d06d1;
-    --bg-button:#30261b;
-    --bg-button-hover:#30261bce;
+    --bg-button:#000000;
+    --bg-button-hover:#262626;
     --light-red-color: #ff5757;
-
-    --color-yellow: #f98800;
 
     --color-primary-text:#28282b;
     --color-secondary-text:#464649cf;
     --color-text-hover:#424242;
+    --color-yellow: #f98800;
 
     --transition: all 0.3s ease;
 }
@@ -31,36 +30,7 @@ body {
     font-family: "EB Garamond", serif;
     padding: 8px;
     background-color: var(--bg-main);
-}
-
-main .slogan {
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 100%;
-    font-size: clamp(1.1rem, 1.2vw, 3.5rem);
-    color: var(--bg-second);
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-
-.slogan p {
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-.main-content {
-    display: flex;
-    align-items: center; justify-content: center;
-    /* margin: 15px; */
-    /* height: 50rem; */
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-}
-
-.main-content img {
-    width: 100%;
-    filter: brightness(0.6);
+    scroll-behavior: smooth;
 }
 
 section:nth-child(even) {
@@ -83,7 +53,6 @@ section h2 {
 .sect-presentation {
     display: flex;
     align-items: center; justify-content: center;
-    width: 100%;
 }
 
 .sect-presentation img {
@@ -115,7 +84,7 @@ section h2 {
 /*? ========== NAVBAR START ========== */
 nav {
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     top: 0; left: 0; right: 0;
     /* margin: 8px; */
     /* border-radius: 8px; */
@@ -191,6 +160,117 @@ nav {
 /*? ========== NAVBAR END ========== */
 
 
+/*? ========== MAIN CONTENT START ========== */
+main {
+    height: 935px;
+}
+
+.main-content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.main-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7));
+}
+
+.main-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.slogan p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+main .slogan {
+    position: absolute;
+    display: flex; flex-direction: column;
+    top: 50%; left: 50%;
+    z-index: 1;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    color: var(--bg-second);
+    transform: translate(-50%, -50%);
+}
+
+.slogan h1 {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.cta-buttons {
+    display: flex; flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+}
+
+.btn {
+    width: 285px;
+    padding: 0.9rem 2.2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn.primary {
+    color: var(--bg-second);
+    background: var(--bg-button);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    background: var(--bg-button-hover);
+}
+
+.btn.secondary {
+    color: var(--bg-second);
+    border: 1px solid var(--border);
+}
+
+.btn.secondary:hover {
+    color: var(--color-primary-text);
+    background: var(--bg-second);
+}
+
+.benefits {
+    display: flex; flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.benefits span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/*? ========== MAIN CONTENT END ========== */
+
+
 /*? ========== SECTION PRODUCTS START ========== */
 .parfum-cards-content {
     display: flex; flex-wrap: wrap;
@@ -241,6 +321,11 @@ nav {
 
 
 /*? ========== SECTION ABOUT START ========== */
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .team-photo {
     width: 800px;
 }
@@ -251,18 +336,42 @@ nav {
     border-radius: 8px;
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    align-items: start;
-}
-
 .text-block {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}       
+}
+
+.text-block h3 {
+    font-weight: 800;
+}
+
+.text-block p {
+    color: var(--color-secondary-text);
+}
+
+.brand-quote {
+    font-style: italic;
+    font-size: 16px;
+    border-left: 3px solid var(--bg-button);
+    color: var(--color-secondary-text);
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.about-features {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-primary-text);
+}
 /*? ========== SECTION ABOUT END ========== */
 
 
@@ -295,7 +404,7 @@ nav {
 
 .featured-img img {
     width: 100%; height: 325px;
-    object-fit: cover;
+    /* object-fit: cover; */
     cursor: pointer;
     transition: var(--transition);
 }
@@ -523,8 +632,6 @@ nav {
 
 
 
-
-
 /*? ========== FORM LOGIN/REGISTER START ========== */
 .form-container {
     display: flex;
@@ -537,12 +644,16 @@ nav {
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
     width: 80rem; height: 45rem;
-    padding: 12px;
-    gap: 1.2rem;
+    padding: 8px;
+    gap: 1.5rem;
     border-radius: 12px;
     text-align: center;
     border: 1px solid var(--border);
     background-color: var(--bg-second);
+}
+
+.form-content form {
+    width: 100%;
 }
 
 .img-content {
@@ -551,17 +662,16 @@ nav {
     border: 1px solid var(--border);
     overflow: hidden;
     border-radius: 8px;
-    /* margin: 12px; */
 }
 
 .img-content .tag {
     position: absolute;
     right: 0;
-    margin: 22px;
+    margin: 8px;
     display: flex;
     align-items: center;
     width: max-content;
-    border-radius: 2rem;
+    border-radius: 6px;
     font-size: 14px;
     padding: 4px 11px;
     transition: var(--transition);
@@ -584,11 +694,15 @@ nav {
     object-fit: cover;
 }
 
-form {
+.form-content form {
     width: 500px; height: 100%;
     display: flex; flex-direction: column;
     justify-content: center;
     gap: 18px;
+}
+
+.form-content form h1 {
+    font-size: clamp(2rem, 2.5vw, 3.5rem);
 }
 
 .form-header {
@@ -602,9 +716,8 @@ form {
 }
 
 .input-group {
-    display: grid;
+    display: flex; flex-wrap: wrap;
     gap: 18px;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 input, .btn-form-submit {
