@@ -123,7 +123,7 @@
         display: flex; flex-direction: column;
         height: max-content;
         grid-template-columns: repeat(1, 1fr);
-        width: 375px;
+        /* width: 375px; */
     }
 
     .form-content form {
@@ -138,4 +138,12 @@
         padding: 18px;
     } */
     /*? Page Form-Register/login END  */
+}
+
+
+@media (max-width: 1865px) {
+    .about-content {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 36px;
+    }
 }

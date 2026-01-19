@@ -481,6 +481,78 @@ main .slogan {
 /*? ========== SECTION FEATURED END ========== */
 
 
+/*? ========== SECTION CATEGORIES END ========== */
+.category-select-container {
+    display: flex;
+    justify-content: center;
+    margin: 2.2rem 0;
+}
+
+.categories {
+    display: flex;
+    gap: 8px;
+    /* background-color: red; */
+    align-items: center;
+    list-style: none;
+}
+
+.categories li {
+    padding: 2px 8px;
+    border-radius: 2rem;
+    border: 1px solid var(--border);
+}
+
+.categories li:hover, 
+.fa-chevron-left:hover,
+.fa-chevron-right:hover  {
+    background-color: var(--bg-main);
+}
+
+.categories 
+.fa-chevron-left,
+.fa-chevron-right {
+    display: flex;
+    align-items: center; justify-content: center;
+    color: var(--color-primary-text);
+    border: 1px solid var(--border);
+    padding: 8px;
+    cursor: pointer;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+}
+
+.categories li.active {
+    background-color: var(--bg-main);
+}
+
+.categories a {
+    text-decoration: none;
+    color: var(--color-secondary-text);
+}
+
+.categories-grid {
+    display: flex; flex-wrap: wrap;
+}
+
+.categories-content {
+    display: flex; flex-wrap: wrap;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: var(--transition);
+    margin: 0 auto;
+    width: 1100px;
+    gap: 8px;
+    /* background-color: red; */
+}
+
+.categories-content.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+/*? ========== SECTION CATEGORIES END ========== */
+
+
 /*? ========== SECTION WHY CHOOSE US? START ========== */
 .benefits-container {
     display: flex; flex-wrap: wrap;
@@ -680,9 +752,9 @@ main .slogan {
     background-color: var(--bg-second);
 }
 
-.img-content svg {
-    width: 15px;
-    margin-left: 8px;
+.img-content .feather-arrow-right {
+    width: 18px;
+    margin-left: 6px;
 }
 
 .img-content a {

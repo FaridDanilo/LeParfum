@@ -1,60 +1,64 @@
-<section id="about" class="sect about-container">
-    <div class="sect-presentation">
-        <img src="assets/img/lines-design/line-left.png" alt="Decorative line left" loading="lazy">
-        <h2>About Us</h2>
-        <img src="assets/img/lines-design/line-right.png" alt="Decorative line right" loading="lazy">
+<div class="category-select-container">
+
+    <ul class="categories">
+        <i class="fa-solid fa-chevron-left"></i>
+        <li class="active"><a href="#">Fresh</a></li>
+        <li><a href="#">Floral</a></li>
+        <li><a href="#">Wooden</a></li>
+        <!-- <li><a href="#">Amber</a></li>
+                <li><a href="#">Gourmand</a></li> -->
+        <i class="fa-solid fa-chevron-right"></i>
+    </ul>
+
+</div>
+
+<div class="categories-grid">
+
+    <div class="categories-content fresh">
+        <!-- Cards -->
     </div>
 
-    <div class="about-content">
-        <div class="team-photo">
-            <img src="assets/img/team-photo.jpg" alt="Team Photo">
-        </div>
-
-        <div class="text-block">
-            <h3>Más que perfumes, creamos experiencias</h3>
-
-            <p class="history">
-                Nacimos con una idea clara: transformar aromas en recuerdos inolvidables.
-                Cada fragancia que seleccionamos cuenta una historia, despierta emociones
-                y deja una huella única en quien la lleva.
-            </p>
-
-            <p class="founding">
-                Desde 2018, nos dedicamos a buscar esencias exclusivas que reflejen elegancia,
-                personalidad y autenticidad.
-            </p>
-
-            <p>
-                Trabajamos con pasión y atención al detalle, seleccionando perfumes que
-                acompañan cada momento de tu vida: desde lo cotidiano hasta lo extraordinario.
-                Nuestro compromiso es ofrecerte aromas que hablen por ti, que te representen
-                y que conviertan cada instante en algo especial.
-            </p>
-        </div>
-
+    <div class="categories-content floral" style="display: none;">
+        <!-- Cards -->
     </div>
-</section>
+
+    <div class="categories-content wooden" style="display: none;">
+        <!-- Cards -->
+    </div>
+
+    <div class="categories-content amber" style="display: none;">
+        <!-- Cards -->
+    </div>
+
+    <div class="categories-content gourmand" style="display: none;">
+        <!-- Cards -->
+    </div>
+
+</div>
+
+<script>
+    const categoryFresh = document.querySelector('.categories-grid .fresh');
+    const categoryFloral = document.querySelector('.categories-grid .floral');
+    const categoryWooden = document.querySelector('.categories-grid .wooden');
+    const categoryGourmand = document.querySelector('.categories-grid .gourmand');
+
+    const categories = document.querySelectorAll('.categories li');
+
+    categories.forEach(category => {
+        category.addEventListener('click', (e) => {
+            e.preventDefault();
+            category.classList.toggle('active');
+        });
+    });
+    //? CATEGORIES SELECT END 
 
 
-<style>
-    .about-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+    //? CLIENTS SAY START
+    const total = 5;
 
-    .team-photo {
-        width: 800px;
-    }
+    const containers = document.querySelectorAll('.stars-rating');
 
-    .team-photo img {
-        display: flex;
-        width: 100%;
-        border-radius: 8px;
-    }
-
-    .text-block {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-</style>
+    containers.forEach(container => {
+        container.innerHTML = '<i class="fa-solid fa-star"></i>'.repeat(total);
+    });
+</script>
