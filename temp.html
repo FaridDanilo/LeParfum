@@ -14,51 +14,80 @@
 
 <div class="categories-grid">
 
-    <div class="categories-content fresh">
-        <!-- Cards -->
+    <div class="categories-grid-container fresh active">
+        <div class="categories-grid-content">
+            <!-- Cards -->
+        </div>
+
     </div>
 
-    <div class="categories-content floral" style="display: none;">
-        <!-- Cards -->
+    <div class="categories-grid-container floral">
+        <div class="categories-grid-content">
+            <!-- Cards -->
+        </div>
+
     </div>
 
-    <div class="categories-content wooden" style="display: none;">
-        <!-- Cards -->
+    <div class="categories-grid-container wooden">
+        <div class="categories-grid-content">
+            <!-- Cards -->
+        </div>
+
     </div>
 
-    <div class="categories-content amber" style="display: none;">
-        <!-- Cards -->
+    <div class="categories-grid-container amber">
+        <div class="categories-grid-content">
+            <!-- Cards -->
+        </div>
+
     </div>
 
-    <div class="categories-content gourmand" style="display: none;">
-        <!-- Cards -->
+    <div class="categories-grid-container gourmand">
+        <div class="categories-grid-content">
+            <!-- Cards -->
+        </div>
+
     </div>
 
 </div>
 
+<style>
+    .categories-grid-container {
+        display: none;
+        margin: 0 auto;
+        width: 1100px;
+    }
+
+    .categories-grid-container.active {
+        display: flex;
+    }
+</style>
+
 <script>
-    const categoryFresh = document.querySelector('.categories-grid .fresh');
-    const categoryFloral = document.querySelector('.categories-grid .floral');
-    const categoryWooden = document.querySelector('.categories-grid .wooden');
-    const categoryGourmand = document.querySelector('.categories-grid .gourmand');
+    const categoryItems = document.querySelectorAll('.categories li');
+    const categoryContents = document.querySelectorAll('.categories-grid-content');
 
-    const categories = document.querySelectorAll('.categories li');
-
-    categories.forEach(category => {
-        category.addEventListener('click', (e) => {
+    categoryItems.forEach(item => {
+        item.addEventListener('click', (e) => {
             e.preventDefault();
-            category.classList.toggle('active');
+
+            // Quitar active de todas las categorías (li)
+            categoryItems.forEach(li => li.classList.remove('active'));
+
+
+            // Agregar active a la seleccionada
+            item.classList.add('active');
+
+            // Obtener el nombre de la categoría
+            const categoryName = item.textContent.trim().toLowerCase();
+
+            // Mostrar el contenido correspondiente
+            const activeContent = document.querySelector(`.categories-grid-container.${categoryName}`);
+
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+
         });
-    });
-    //? CATEGORIES SELECT END 
-
-
-    //? CLIENTS SAY START
-    const total = 5;
-
-    const containers = document.querySelectorAll('.stars-rating');
-
-    containers.forEach(container => {
-        container.innerHTML = '<i class="fa-solid fa-star"></i>'.repeat(total);
     });
 </script>

@@ -26,14 +26,17 @@
 }
 
 /*? ========== UNIVERSAL START ========== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "EB Garamond", serif;
     padding: 8px;
     background-color: var(--bg-main);
-    scroll-behavior: smooth;
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
     background-color: var(--bg-second);
 }
 
@@ -77,6 +80,41 @@ section h2 {
 
 .feather-heart:hover {
     color: var(--light-red-color);
+}
+
+.shopping-cart {
+    position: fixed;
+    bottom: 0; right: 0;
+    display: grid;
+    place-items: center;
+    width: 3.2rem; height: 3.2rem;
+    cursor: pointer;
+    margin: 8px;
+    z-index: 1;
+    border-radius: 8px;
+    transition: var(--transition);
+    background-color: var(--bg-button);
+}
+
+.shopping-cart:hover {
+    transform: scale(1.05);
+}
+
+.shopping-cart .feather-shopping-cart {
+    width: 25px; height: 25px;
+    pointer-events: none;
+}
+
+.cart-dot-counter {
+    position: relative;
+    top: -6px; left: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    color: var(--bg-second);
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background-color: var(--light-red-color);
 }
 /*? ========== UNIVERSAL END ========== */
 
@@ -482,21 +520,33 @@ main .slogan {
 
 
 /*? ========== SECTION CATEGORIES END ========== */
-.category-select-container {
+.category-select-container, .category-select {
     display: flex;
     justify-content: center;
-    margin: 2.2rem 0;
+    margin: 1rem 0;
+    gap: 8px;
+    overflow: hidden;
 }
 
 .categories {
     display: flex;
     gap: 8px;
-    /* background-color: red; */
+    width: 355px;
     align-items: center;
     list-style: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    flex: 1;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
 }
 
 .categories li {
+    flex: 0 0 auto;
+    white-space: nowrap;
     padding: 2px 8px;
     border-radius: 2rem;
     border: 1px solid var(--border);
@@ -508,7 +558,6 @@ main .slogan {
     background-color: var(--bg-main);
 }
 
-.categories 
 .fa-chevron-left,
 .fa-chevron-right {
     display: flex;
@@ -534,21 +583,21 @@ main .slogan {
     display: flex; flex-wrap: wrap;
 }
 
-.categories-content {
-    display: flex; flex-wrap: wrap;
-    transform: translateY(10px);
-    opacity: 0;
-    transition: var(--transition);
+.categories-grid-container {
+    display: none;
     margin: 0 auto;
     width: 1100px;
-    gap: 8px;
-    /* background-color: red; */
 }
 
-.categories-content.active {
+.categories-grid-container.active {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
+}
+
+.categories-grid-content {
+    display: flex; flex-wrap: wrap;
+    gap: 8px;
+    transform: translateY(10px);
+    transition: var(--transition);
 }
 /*? ========== SECTION CATEGORIES END ========== */
 
@@ -701,6 +750,95 @@ main .slogan {
     background-color: var(--bg-button-hover);
 }
 /*? ========== SECTION NEWSLETTER END ========== */
+
+
+/*? ========== FOOTER START ========== */
+footer {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-second);
+}
+
+.footer-main-content {
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.footer-main-content h2 {
+    color: var(--color-primary-text);
+    margin-bottom: 12px;
+}
+
+.footer-main-content a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-secondary-text);
+}
+
+.footer-main-content a:hover {
+    color:  var(--color-text-hover);
+}
+
+.leparfum-social {
+    width: 300px;
+}
+
+.social-networks {
+    margin-top: 20px;
+}
+
+.social-networks {
+    display: flex;
+    gap: 8px;
+}
+
+.social-networks a {
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    width: 45px; height: 45px;
+    transition: var(--transition);
+    border: 1px solid var(--border);
+}
+
+.social-networks a:hover {
+    background-color: var(--bg-main);
+}
+
+.social-networks i {
+    font-size: 1.3rem;
+}
+
+.quick-links li,
+.services li {
+    list-style: none;
+}
+
+.quick-links,
+.services,
+.contacts {
+    display: flex; flex-direction: column;
+    /* background-color: red; */
+}
+
+.quick-links li,
+.services li,
+.contacts li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contacts {
+    gap: 16px;
+    font-weight: 600;
+    color: var(--color-secondary-text);
+}
+
+.contacts i {
+    color: var(--bg-light-purple);
+}
+/*? ========== FOOTER END ========== */
 
 
 

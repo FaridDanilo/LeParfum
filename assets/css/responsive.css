@@ -138,6 +138,25 @@
         padding: 18px;
     } */
     /*? Page Form-Register/login END  */
+
+    /*? Sect Categories START  */
+    .categories {
+        max-width: 240px;
+    }
+    /*? Sect Categories END  */
+
+
+    /*? Footer START  */
+    .quick-links,
+    .services,
+    .contacts {
+        width: 100%;
+    }
+
+    .social-networks {
+        margin-bottom: 12px;
+    }
+    /*? Footer END  */
 }
 
 

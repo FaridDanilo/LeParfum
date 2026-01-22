@@ -23,34 +23,46 @@ navbarLinks.forEach(link => {
 
 //? CATEGORIES SELECT START
 const categoryItems = document.querySelectorAll('.categories li');
-const categoryContents = document.querySelectorAll('.categories-content');
+const categoryContainers = document.querySelectorAll('.categories-grid-container');
 
 categoryItems.forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Quitar active de todas las categorías (li)
         categoryItems.forEach(li => li.classList.remove('active'));
 
-        // Agregar active a la seleccionada
+        categoryContainers.forEach(container => container.classList.remove('active'));
+
         item.classList.add('active');
-
-        // Obtener el nombre de la categoría
+        
         const categoryName = item.textContent.trim().toLowerCase();
-
-        // Ocultar todos los contenidos
-        categoryContents.forEach(content => {
-            content.classList.remove('active');
-        });
-
-        // Mostrar el contenido correspondiente
-        const activeContent = document.querySelector(
-            `.categories-content.${categoryName}`
-        );
-
+        
+        const activeContent = document.querySelector(`.categories-grid-container.${categoryName}`);
+        
         if (activeContent) {
             activeContent.classList.add('active');
         }
+        
+    });
+});
+
+const categories = document.querySelector('.categories');
+const btnLeft = document.querySelector('.cat-arrow.left');
+const btnRight = document.querySelector('.cat-arrow.right');
+
+const scrollAmount = 120; // px por click
+
+btnLeft.addEventListener('click', () => {
+    categories.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+btnRight.addEventListener('click', () => {
+    categories.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
     });
 });
 //? CATEGORIES SELECT END 
