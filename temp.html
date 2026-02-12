@@ -1,93 +1,61 @@
-<div class="category-select-container">
+<!-- PAGINA PRINCIPAL INDEX.HTML -->
+<article class="featured-card" id="cardData">
+    <div class="featured-header">
+        <div class="featured-img">
+            <img src="assets/img/products/featured/featured_1.jpg" alt="Golden Honey" loading="lazy">
+            <i data-feather="heart"></i>
+            <i data-feather="shopping-cart"></i>
+            <div class="price">
+                <strong>$35.99</strong>
+                <span>/ 50 ml</span>
+            </div>
+        </div>
+    </div>
 
-    <ul class="categories">
-        <i class="fa-solid fa-chevron-left"></i>
-        <li class="active"><a href="#">Fresh</a></li>
-        <li><a href="#">Floral</a></li>
-        <li><a href="#">Wooden</a></li>
-        <!-- <li><a href="#">Amber</a></li>
-                <li><a href="#">Gourmand</a></li> -->
-        <i class="fa-solid fa-chevron-right"></i>
-    </ul>
+    <div class="featured-body">
+        <div class="featured-info">
+            <h3>Golden Honey</h3>
+        </div>
 
+        <div class="featured-footer">
+            <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                elegante y
+                envolvente.</p>
+            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+        </div>
+    </div>
+</article>
+
+<div class="btn-adding-cart"> <!-- Este es el boton que abre el menu de la lista y que lleva el conteo de cantidad agregada -->
+    <i data-feather="shopping-cart" style="pointer-events: none;"></i>
+    <div class="cart-dot">2</div>
 </div>
 
-<div class="categories-grid">
+<div class="shopping-cart-container"> <!-- Aqui se mostraran los productos agregados al carrito -->
+    <div class="shopping-cart-content">
+        <div class="my-cart-content">
+            <div class="cart-list">
 
-    <div class="categories-grid-container fresh active">
-        <div class="categories-grid-content">
-            <!-- Cards -->
+                <article class="aggregated-product">
+                    <!-- Card... -->
+                </article>
+            </div>
         </div>
-
     </div>
-
-    <div class="categories-grid-container floral">
-        <div class="categories-grid-content">
-            <!-- Cards -->
-        </div>
-
-    </div>
-
-    <div class="categories-grid-container wooden">
-        <div class="categories-grid-content">
-            <!-- Cards -->
-        </div>
-
-    </div>
-
-    <div class="categories-grid-container amber">
-        <div class="categories-grid-content">
-            <!-- Cards -->
-        </div>
-
-    </div>
-
-    <div class="categories-grid-container gourmand">
-        <div class="categories-grid-content">
-            <!-- Cards -->
-        </div>
-
-    </div>
-
 </div>
-
-<style>
-    .categories-grid-container {
-        display: none;
-        margin: 0 auto;
-        width: 1100px;
-    }
-
-    .categories-grid-container.active {
-        display: flex;
-    }
-</style>
+<!-- PAGINA PRINCIPAL INDEX.HTML -->
 
 <script>
-    const categoryItems = document.querySelectorAll('.categories li');
-    const categoryContents = document.querySelectorAll('.categories-grid-content');
+    const titleProduct = document.querySelectorAll('.cardData .featured-info h3');
+    const imgProduct = document.querySelectorAll('.cardData');
+    const priceProduct = document.querySelectorAll('.cardData .price');
+    const addCart = document.querySelectorAll('.feather-shopping-cart');
 
-    categoryItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            // Quitar active de todas las categorías (li)
-            categoryItems.forEach(li => li.classList.remove('active'));
-
-
-            // Agregar active a la seleccionada
-            item.classList.add('active');
-
-            // Obtener el nombre de la categoría
-            const categoryName = item.textContent.trim().toLowerCase();
-
-            // Mostrar el contenido correspondiente
-            const activeContent = document.querySelector(`.categories-grid-container.${categoryName}`);
-
-            if (activeContent) {
-                activeContent.classList.add('active');
-            }
-
+    addCart.forEach(cart => {
+        cart.addEventListener('click', () => {
+            const title = cart.querySelector('h3').textContent;
+            const img = cart.querySelector('img').src;
+            const price = cart.querySelector('.price strong').textContent;
         });
     });
 </script>

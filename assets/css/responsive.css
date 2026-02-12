@@ -71,7 +71,6 @@
         /* display: none; */
         font-size: 1.2rem;
     }
-
     /*? Navbar END */
 
     /*? Universal START  */
@@ -84,6 +83,14 @@
         margin: 0;
         padding: 0;
         border-radius: 0;
+    }
+
+    .featured-card {
+        flex-basis: auto;
+    }
+    
+    .modal-product.active {
+        width: 400px;
     }
     /*? Universal END  */
 

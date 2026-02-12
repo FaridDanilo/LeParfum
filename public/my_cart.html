@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <title>My Cart</title>
+</head>
+
+<header>
+    <nav>
+        <div class="navbar-container">
+            <div class="menu-toggle" id="openMenu">
+                <i data-feather="menu"></i>
+            </div>
+
+            <a href="#home" class="navbar-logo">
+                <img src="../assets/img/logo.png" alt="LeParfum logo">
+            </a>
+
+            <div class="navbar-mobile-container">
+                <div class="navbar-mobile-content">
+                    <ul class="navbar-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#products">Products</a></li>
+                        <li><a href="../index.html#featured">Featured</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+
+                    <div class="navbar-actions">
+                        <a href="login.html" class="btn-sign-in">Sign In</a>
+                        <a href="register.html" class="btn-sign-up">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="my-cart-container">
+        <h1>My Cart</h1>
+    
+        <div class="my-cart-content">
+            <div class="cart-list">
+
+                <article class="aggregate-product">
+                    <img src="../assets/img/products/parfum_5.jpg" alt="" loading="lazy">
+
+                    <div class="product-data">
+
+                        <div class="product-info">
+                            <h2>Product Title</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    
+                            <div class="product-price">$39.99</div>
+                        </div>
+    
+                        <div class="quantity-select">
+                            <button class="btn-increase" id="btnIncrease"><i class="fa-solid fa-minus"></i></button>
+                            <div class="Counter">1</div>
+                            <button class="btn-decrease" id="btnDecrease"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        
+                    </div>
+
+                    <button class="btn-remove"><i class="fa-solid fa-close"></i></button>
+
+                </article>
+
+            </div>
+        </div>
+    
+        <div class="payment-container">
+            <div class="aply-coupon">
+    
+            </div>
+    
+            <div class="payment-confirmation">
+                
+            </div>
+    
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>feather.replace()</script>
+
+    <script src="assets/js/scripts.js"></script>
+</body>

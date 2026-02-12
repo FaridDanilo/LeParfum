@@ -21,8 +21,10 @@
     --color-secondary-text:#464649cf;
     --color-text-hover:#424242;
     --color-yellow: #f98800;
+    --overlay-color: rgba(0, 0, 0, 0.5);
 
     --transition: all 0.3s ease;
+    --box-shadow: 0 12px 30px rgba(0,0,0,.08);
 }
 
 /*? ========== UNIVERSAL START ========== */
@@ -32,18 +34,22 @@ html {
 
 body {
     font-family: "EB Garamond", serif;
-    padding: 8px;
+    /* padding: 8px; */
     background-color: var(--bg-main);
 }
 
-section:nth-child(odd) {
-    background-color: var(--bg-second);
+main, section {
+    padding: 8px;
 }
 
 section {
     margin-top: 12px;
     border-radius: 8px;
     padding: 18px;
+}
+
+section:nth-child(even) {
+    background-color: var(--bg-second);
 }
 
 section h2 {
@@ -67,54 +73,106 @@ section h2 {
     filter: brightness(0.8);
 }
 
-.feather-heart,
-.feather-shopping-cart {
-    color: var(--bg-second);
-    transition: var(--transition);
-}
-
-.feather-heart:hover,
-.feather-shopping-cart:hover {
-    transform: scale(1.1);
-}
-
-.feather-heart:hover {
-    color: var(--light-red-color);
-}
-
-.shopping-cart {
-    position: fixed;
-    bottom: 0; right: 0;
-    display: grid;
-    place-items: center;
-    width: 3.2rem; height: 3.2rem;
+.feather-heart {
+    position: absolute;
+    width: 30px; height: 30px;
+    padding: 6px;
+    border-radius: 50%;
     cursor: pointer;
-    margin: 8px;
-    z-index: 1;
-    border-radius: 8px;
     transition: var(--transition);
+}
+
+.feather-heart {
+    top: 0; right: 0;
+    margin: 6px;
+    color: var(--bg-second);
     background-color: var(--bg-button);
 }
 
-.shopping-cart:hover {
-    transform: scale(1.05);
+.feather-heart:hover {
+    animation: pulse 0.3s infinite;
 }
 
-.shopping-cart .feather-shopping-cart {
-    width: 25px; height: 25px;
-    pointer-events: none;
+/*! PENDIENTE ACOMODAR MEJOR  */
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
-.cart-dot-counter {
-    position: relative;
-    top: -6px; left: 10px;
-    display: grid;
-    place-items: center;
+.shopping-cart-container {
+    position: fixed;
+    top: 0; right: 0;
+    width: 420px; height: 100vh;
+    opacity: 0;
+    z-index: 1000;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    transform: translateX(100%);
+    background-color: var(--bg-second);
+}
+
+.my-cart-content {
+    display: flex;
     font-size: 12px;
-    color: var(--bg-second);
-    width: 16px; height: 16px;
-    border-radius: 50%;
-    background-color: var(--light-red-color);
+    color: var(--color-secondary-text);
+    align-items: center; justify-content: center;
+    height: 100vh;
+}
+
+.shopping-cart-container.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay-product {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%; height: 100vh;
+    background-color: var(--overlay-color);
+}
+
+.modal-overlay-product.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-product {
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.modal-product.active {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    z-index: 1000;
+    border-radius: 8px;
+    background-color: var(--bg-second);
+}
+
+.modal-product .content {
+    display: flex;
+    gap: 8px;
+    margin: 8px;
+}
+
+.modal-info {
+    gap: 8px;
+}
+
+#modalImg {
+    width: 300px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
 }
 /*? ========== UNIVERSAL END ========== */
 
@@ -151,7 +209,7 @@ nav {
 
 .navbar-mobile-content {
     display: flex;
-    justify-content: space-between;
+    align-items: center; justify-content: space-between;
 }
 
 .navbar-mobile-content .navbar-links {
@@ -187,6 +245,11 @@ nav {
     background-color: var(--bg-light);
 }
 
+.feather-shopping-cart {
+    cursor: pointer;
+    color: var(--bg-button);
+}
+
 .btn-sign-in {
     background: none;
 }
@@ -200,16 +263,16 @@ nav {
 
 /*? ========== MAIN CONTENT START ========== */
 main {
-    height: 935px;
+    height: 100vh;
 }
 
 .main-content {
     position: relative;
     display: flex;
     height: 100%;
+    border-radius: 12px;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -318,9 +381,9 @@ main .slogan {
 .card-content {
     position: relative;
     display: flex;
-    width: 300px;
+    width: 320px;
     flex-grow: 1;
-    border-radius: 8px;
+    border-radius: 1.2rem;
     cursor: pointer;
     overflow: hidden;
     transition: var(--transition);
@@ -334,26 +397,6 @@ main .slogan {
 
 .card-content img:hover {
     transform: scale(1.05);
-}
-
-.card-content
-.feather-heart,
-.feather-shopping-cart {
-    position: absolute;
-    width: 20px; height: 20px;
-    transition: var(--transition);
-    margin: 8px;
-    /* color: var(--bg-second); */
-}
-
-.card-content 
-.feather-heart {
-    right: 0;
-}
-
-.card-content 
-.feather-shopping-cart {
-    top: 25px; right: 1px;
 }
 /*? ========== SECTION PRODUCTS END ========== */
 
@@ -425,11 +468,21 @@ main .slogan {
 
 .featured-card {
     flex-grow: 1;
-    width: 250px;
+    flex-basis: 100px;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 1.8rem;
+    transition: var(--transition);
     border: 1px solid var(--border);
     background-color: var(--bg-second);
+}
+
+.featured-card h3, p {
+    pointer-events: none;
+}
+
+.featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow);
 }
 
 .featured-img {
@@ -437,45 +490,25 @@ main .slogan {
     display: flex;
     height: 100%;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 1.2rem;
 }
 
 .featured-img img {
     width: 100%; height: 325px;
-    /* object-fit: cover; */
-    cursor: pointer;
     transition: var(--transition);
 }
 
 .featured-img img:hover {
-    transform: scale(1.2);
-}
-
-.featured-img 
-.feather-heart,
-.feather-shopping-cart {
-    position: absolute;
-    width: 20px; height: 20px;
-    margin: 8px;
-    /* color: var(--bg-button); */
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.featured-img .feather-heart {
-    top: 0; right: 0;
-}
-
-.featured-img .feather-shopping-cart {
-    top: 25px; right: 1px;
+    transform: scale(1.08);
 }
 
 .featured-img .price {
     position: absolute;
-    margin: 6px;
     padding: 6px 12px;
+    margin: 6px;
+    pointer-events: none;
     font-size: 14px;
-    border-radius: 6px;
+    border-radius: 2rem;
     color: var(--bg-second);
     background-color: var(--bg-button);
 }
@@ -501,19 +534,20 @@ main .slogan {
     min-height: 4.5rem;
 }
 
-.featured-footer button {
+.featured-footer .btn-buy {
     cursor: pointer;
     width: 100%;
     font-size: 12px;
-    padding: 10px 14px;
-    border-radius: 8px;
+    padding: 14px 0;
+    border-radius: 2rem;
     color: var(--bg-main);
     transition: var(--transition);
     background-color: var(--bg-button);
     border: 1px solid var(--border);
 }
 
-.featured-footer button:hover {
+.featured-footer .btn-buy:hover {
+    transform: scale(1.01);
     background-color: var(--bg-button-hover);
 }
 /*? ========== SECTION FEATURED END ========== */
@@ -586,7 +620,7 @@ main .slogan {
 .categories-grid-container {
     display: none;
     margin: 0 auto;
-    width: 1100px;
+    width: 1200px;
 }
 
 .categories-grid-container.active {
@@ -616,6 +650,10 @@ main .slogan {
     transition: var(--transition);
     border: 1px solid var(--border);
     background-color: var(--bg-second);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
 }
 
 .benefit-card h3 {
@@ -786,9 +824,6 @@ footer {
 
 .social-networks {
     margin-top: 20px;
-}
-
-.social-networks {
     display: flex;
     gap: 8px;
 }
@@ -803,6 +838,7 @@ footer {
 }
 
 .social-networks a:hover {
+    transform: translateY(-10px);
     background-color: var(--bg-main);
 }
 
@@ -834,16 +870,10 @@ footer {
     font-weight: 600;
     color: var(--color-secondary-text);
 }
-
-.contacts i {
-    color: var(--bg-light-purple);
-}
 /*? ========== FOOTER END ========== */
 
 
-
-
-/*? ========== FORM LOGIN/REGISTER START ========== */
+/*? ========== PAGE FORM LOGIN/REGISTER START ========== */
 .form-container {
     display: flex;
     align-items: center; justify-content: center;
@@ -948,7 +978,7 @@ input:focus {
     cursor: pointer;
     background-color: var(--bg-light-purple);
 }
-/*? ========== FORM LOGIN/REGISTER END ========== */
+/*? ========== PAGE FORM LOGIN/REGISTER END ========== */
 
 
 

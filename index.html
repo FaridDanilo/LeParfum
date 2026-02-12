@@ -35,8 +35,9 @@
                         </ul>
 
                         <div class="navbar-actions">
-                            <a href="public/login.html" class="btn-sign-in">Sign In</a>
-                            <a href="public/register.html" class="btn-sign-up">Sign Up</a>
+                            <!-- <a href="public/login.html" class="btn-sign-in">Sign In</a>
+                            <a href="public/register.html" class="btn-sign-up">Sign Up</a> -->
+                            <i data-feather="shopping-cart" class="add-to-cart"></i>
                         </div>
                     </div>
                 </div>
@@ -44,9 +45,51 @@
         </nav>
     </header>
 
-    <div class="shopping-cart">
-        <i data-feather="shopping-cart"></i>
-        <!-- <div class="cart-dot-counter">2</div> -->
+    <div class="shopping-cart-container">
+        <div class="shopping-cart-content">
+            <div class="my-cart-content">
+                <h2>Your cart is empty</h2>
+                <div class="cart-list">
+
+                    <!-- <article class="aggregated-product">
+                        <img src="../assets/img/products/parfum_5.jpg" alt="" loading="lazy">
+
+                        <div class="product-data">
+
+                            <div class="product-info">
+                                <h2>Product Title</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        
+                                <div class="product-price">$39.99</div>
+                            </div>
+        
+                            <div class="quantity-select">
+                                <button class="btn-increase" id="btnIncrease"><i class="fa-solid fa-minus"></i></button>
+                                <div class="Counter">1</div>
+                                <button class="btn-decrease" id="btnDecrease"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                            
+                        </div>
+
+                        <button class="btn-remove"><i class="fa-solid fa-close"></i></button>
+
+                    </article> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay-product">
+        <div class="modal-product">
+            <div class="content">
+                <img src="" alt="" id="modalImg">
+                <div class="modal-info">
+                    <h1 class="modal-title" id="modalTitle"></h1>
+                    <p class="modal-desc" id="modalDesc"></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <main id="home">
@@ -92,61 +135,61 @@
                 <article class="card-content">
                     <img src="assets/img/products/parfum_1.jpg" alt="parfum 1" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_2.jpg" alt="parfum 2" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_3.jpg" alt="parfum 3" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_4.jpg" alt="parfum 4" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_5.jpg" alt="parfum 5" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_6.jpg" alt="parfum 6" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_7.jpg" alt="parfum 7" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_8.jpg" alt="parfum 8" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_9.jpg" alt="parfum 9" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
                     <img src="assets/img/products/parfum_10.jpg" alt="parfum 10" loading="lazy">
                     <i data-feather="heart"></i>
-                    <i data-feather="shopping-cart"></i>
+                    <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
             </div>
@@ -227,7 +270,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_1.jpg" alt="Golden Honey" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price">
                                 <strong>$35.99</strong>
                                 <span>/ 50 ml</span>
@@ -243,7 +286,7 @@
                         <div class="featured-footer">
                             <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce, elegante y
                                 envolvente.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -253,7 +296,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_2.jpg" alt="Amber Bloom" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price">
                                 <strong>$42.50</strong>
                                 <span>/ 50 ml</span>
@@ -269,7 +312,7 @@
                         <div class="featured-footer">
                             <p>Una mezcla floral y ambarada que combina rosas suaves con un fondo cálido y sofisticado.
                             </p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -279,7 +322,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_3.jpg" alt="Citrus Aura" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price">
                                 <strong>$29.99</strong>
                                 <span>/ 50 ml</span>
@@ -295,7 +338,7 @@
                         <div class="featured-footer">
                             <p>Aroma fresco y vibrante con notas de limón, bergamota y un toque herbal revitalizante.
                             </p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -305,7 +348,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_4.jpg" alt="Velvet Rose" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price">
                                 <strong>$38.75</strong>
                                 <span>/ 50 ml</span>
@@ -320,7 +363,7 @@
 
                         <div class="featured-footer">
                             <p>Perfume floral intenso con pétalos de rosa y un fondo suave de almizcle y madera.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -330,7 +373,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_5.jpg" alt="Midnight Oud" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price">
                                 <strong>$49.90</strong>
                                 <span>/ 50 ml</span>
@@ -345,7 +388,7 @@
 
                         <div class="featured-footer">
                             <p>Una fragancia profunda y misteriosa con oud, especias y toques ahumados.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -355,7 +398,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_6.jpg" alt="Pure Vanilla" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price">
                                 <strong>$33.40</strong>
                                 <span>/ 50 ml</span>
@@ -370,7 +413,7 @@
 
                         <div class="featured-footer">
                             <p>Aroma dulce y cremoso de vainilla con un fondo ligero de caramelo y leche.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -389,7 +432,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_7.jpg" alt="Ocean Mist" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price"><strong>$31.99</strong> <span>/ 50 ml</span></div>
                         </div>
                     </div>
@@ -402,7 +445,7 @@
                         <div class="featured-footer">
                             <p>Fragancia fresca y marina con notas limpias y ligeras que evocan brisa oceánica y
                                 libertad.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -412,7 +455,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_8.jpg" alt="Soft Blossom" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price"><strong>$36.50</strong> <span>/ 50 ml</span></div>
                         </div>
                     </div>
@@ -425,7 +468,7 @@
                         <div class="featured-footer">
                             <p>Aroma floral suave con pétalos delicados y un fondo limpio que transmite calma y
                                 elegancia.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -435,7 +478,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_9.jpg" alt="Fresh Linen" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price"><strong>$28.90</strong> <span>/ 50 ml</span></div>
                         </div>
                     </div>
@@ -448,7 +491,7 @@
                         <div class="featured-footer">
                             <p>Fragancia limpia con notas suaves y aireadas que recuerdan ropa fresca y pureza natural.
                             </p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -458,7 +501,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_10.jpg" alt="White Musk" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price"><strong>$39.75</strong> <span>/ 50 ml</span></div>
                         </div>
                     </div>
@@ -471,7 +514,7 @@
                         <div class="featured-footer">
                             <p>Aroma elegante de almizcle blanco con notas suaves que dejan una sensación cálida y
                                 limpia.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -481,7 +524,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_11.jpg" alt="Pure Air" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price"><strong>$27.40</strong> <span>/ 50 ml</span></div>
                         </div>
                     </div>
@@ -494,7 +537,7 @@
                         <div class="featured-footer">
                             <p>Fragancia ligera y fresca con notas transparentes que transmiten limpieza y frescura
                                 continua.</p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -504,7 +547,7 @@
                         <div class="featured-img">
                             <img src="assets/img/products/featured/featured_12.jpg" alt="Morning Dew" loading="lazy">
                             <i data-feather="heart"></i>
-                            <i data-feather="shopping-cart"></i>
+                            <!-- <i data-feather="shopping-cart"></i> -->
                             <div class="price"><strong>$34.20</strong> <span>/ 50 ml</span></div>
                         </div>
                     </div>
@@ -517,7 +560,7 @@
                         <div class="featured-footer">
                             <p>Aroma fresco y natural con notas verdes y acuáticas que evocan un inicio limpio y suave.
                             </p>
-                            <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                         </div>
                     </div>
                 </article>
@@ -562,7 +605,6 @@
         </div>
 
         <div class="categories-grid">
-
             <div class="categories-grid-container fresh active">
 
                 <div class="categories-grid-content">
@@ -572,7 +614,6 @@
                                 <img src="assets/img/products/featured/featured_1.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -589,7 +630,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -600,7 +641,7 @@
                                 <img src="assets/img/products/featured/featured_1.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -617,7 +658,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -628,7 +669,7 @@
                                 <img src="assets/img/products/featured/featured_1.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -645,7 +686,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -656,7 +697,7 @@
                                 <img src="assets/img/products/featured/featured_1.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -673,7 +714,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -688,7 +729,6 @@
                                 <img src="assets/img/products/featured/featured_2.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -705,7 +745,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -716,7 +756,6 @@
                                 <img src="assets/img/products/featured/featured_2.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -733,7 +772,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -744,7 +783,6 @@
                                 <img src="assets/img/products/featured/featured_2.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -761,7 +799,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -772,7 +810,6 @@
                                 <img src="assets/img/products/featured/featured_2.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -789,7 +826,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -804,7 +841,7 @@
                                 <img src="assets/img/products/featured/featured_3.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -821,7 +858,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -832,7 +869,7 @@
                                 <img src="assets/img/products/featured/featured_3.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -849,7 +886,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -860,7 +897,7 @@
                                 <img src="assets/img/products/featured/featured_3.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -877,7 +914,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -888,7 +925,7 @@
                                 <img src="assets/img/products/featured/featured_3.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -905,7 +942,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -920,7 +957,7 @@
                                 <img src="assets/img/products/featured/featured_4.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -937,7 +974,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -948,7 +985,7 @@
                                 <img src="assets/img/products/featured/featured_4.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -965,7 +1002,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -976,7 +1013,7 @@
                                 <img src="assets/img/products/featured/featured_4.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -993,7 +1030,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -1004,7 +1041,7 @@
                                 <img src="assets/img/products/featured/featured_4.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -1021,7 +1058,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -1036,7 +1073,7 @@
                                 <img src="assets/img/products/featured/featured_5.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -1053,7 +1090,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -1064,7 +1101,7 @@
                                 <img src="assets/img/products/featured/featured_5.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -1081,7 +1118,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -1092,7 +1129,7 @@
                                 <img src="assets/img/products/featured/featured_5.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -1109,7 +1146,7 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
@@ -1120,7 +1157,7 @@
                                 <img src="assets/img/products/featured/featured_5.jpg" alt="Golden Honey"
                                     loading="lazy">
                                 <i data-feather="heart"></i>
-                                <i data-feather="shopping-cart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
                                 <div class="price">
                                     <strong>$35.99</strong>
                                     <span>/ 50 ml</span>
@@ -1137,12 +1174,245 @@
                                 <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
                                     elegante y
                                     envolvente.</p>
-                                <button><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
                             </div>
                         </div>
                     </article>
                 </div>
             </div>
+
+            <div class="categories-grid-container spiced">
+                <div class="categories-grid-content">
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_6.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_6.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_6.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_6.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="categories-grid-container green">
+                <div class="categories-grid-content">
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_7.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_7.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_7.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="featured-card">
+                        <div class="featured-header">
+                            <div class="featured-img">
+                                <img src="assets/img/products/featured/featured_7.jpg" alt="Golden Honey"
+                                    loading="lazy">
+                                <i data-feather="heart"></i>
+                                <!-- <i data-feather="shopping-cart"></i> -->
+                                <div class="price">
+                                    <strong>$35.99</strong>
+                                    <span>/ 50 ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="featured-body">
+                            <div class="featured-info">
+                                <h3>Golden Honey</h3>
+                            </div>
+
+                            <div class="featured-footer">
+                                <p>Fragancia cálida con notas de miel natural, vainilla y flores blancas. Dulce,
+                                    elegante y
+                                    envolvente.</p>
+                                <button class="btn-buy"><i class="fa-solid fa-bag-shopping"></i> Order Now</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
 
     </section>
 
@@ -1293,7 +1563,8 @@
                     <img src="assets/img/logo.png" alt="LeParfum logo">
                 </a>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus saepe provident, beatae magni, nisi laboriosam ullam pariatur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus saepe provident, beatae magni, nisi
+                    laboriosam ullam pariatur.</p>
 
                 <div class="social-networks">
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1326,26 +1597,25 @@
 
             <div class="contacts">
                 <h2>Contact Us</h2>
-                
+
                 <div class="location">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Location</span>
                 </div>
-                
+
                 <div class="email">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Email</span>
                 </div>
-                
+
                 <div class="phone-number">
                     <i class="fa-solid fa-phone"></i>
                     <span>Phone Number</span>
                 </div>
-
             </div>
 
         </div>
-        
+
     </footer>
 
     <script src="https://unpkg.com/feather-icons"></script>
