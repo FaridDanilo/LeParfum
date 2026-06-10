@@ -28,16 +28,19 @@
                         <ul class="navbar-links">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#products">Products</a></li>
+                            <li><a href="#about">About Us</a></li>
                             <li><a href="#featured">Featured</a></li>
                             <li><a href="#categories">Categories</a></li>
-                            <li><a href="#about">About Us</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
 
                         <div class="navbar-actions">
                             <!-- <a href="public/login.html" class="btn-sign-in">Sign In</a>
                             <a href="public/register.html" class="btn-sign-up">Sign Up</a> -->
-                            <i data-feather="shopping-cart" class="add-to-cart"></i>
+                            <div class="cart-btn">
+                                <i data-feather="shopping-cart" class="add-to-cart"></i>
+                                <span>My Cart</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,10 +86,18 @@
     <div class="modal-overlay-product">
         <div class="modal-product">
             <div class="content">
-                <img src="" alt="" id="modalImg">
+                <div class="modal-img-content">
+                    <img src="" alt="" id="modalImg">
+                </div>
                 <div class="modal-info">
                     <h1 class="modal-title" id="modalTitle"></h1>
                     <p class="modal-desc" id="modalDesc"></p>
+                </div>
+                <button class="btn-close"><i data-feather="x"></i></button>
+                <div class="action-buttons">
+                    <button class="btn-add-to-cart"><i data-feather="shopping-cart"></i>Add to cart</button>
+                    <button class="btn-like"><i data-feather="thumbs-up"></i></button>
+                    <!-- <button class=""><i data-feather="heart"></i></button> -->
                 </div>
             </div>
         </div>
@@ -130,63 +141,116 @@
                 <img src="assets/img/lines-design/line-right.png" alt="Decorative line right" loading="lazy">
             </div>
 
-            <div class="parfum-cards-content">
+            <div class="parfum-cards-content" id="skeletonContainer">
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+
+                <article class="card-skeleton">
+                    <div class="skeleton card"></div>
+                </article>
+            </div>
+
+            <div class="parfum-cards-content" id="content" style="display:none;">
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_1.jpg" alt="parfum 1" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_2.jpg" alt="parfum 2" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_3.jpg" alt="parfum 3" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_4.jpg" alt="parfum 4" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_5.jpg" alt="parfum 5" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_6.jpg" alt="parfum 6" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_7.jpg" alt="parfum 7" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_8.jpg" alt="parfum 8" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_9.jpg" alt="parfum 9" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
                 </article>
 
                 <article class="card-content">
+                    <h3>Golden Honey</h3>
                     <img src="assets/img/products/parfum_10.jpg" alt="parfum 10" loading="lazy">
                     <i data-feather="heart"></i>
                     <!-- <i data-feather="shopping-cart"></i> -->
@@ -1622,6 +1686,7 @@
     <script>feather.replace()</script>
 
     <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/.js"></script>
 
 </body>
 

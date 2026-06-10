@@ -21,6 +21,14 @@ navbarLinks.forEach(link => {
 //? NAVBAR END
 
 
+//? SKELETONM ANIMATIONS START 
+window.addEventListener('load', ()=> {
+    document.getElementById('skeletonContainer').style.display = 'none';
+    document.getElementById('content').style.display = 'flex';
+});
+//? SKELETONM ANIMATIONS END 
+
+
 //? CATEGORIES SELECT START
 const categoryItems = document.querySelectorAll('.categories li');
 const categoryContainers = document.querySelectorAll('.categories-grid-container');
@@ -80,7 +88,7 @@ containers.forEach(container => {
 
 
 //? ADD TO THE CART START
-const cartBtn = document.querySelector('.feather-shopping-cart');
+const cartBtn = document.querySelector('.cart-btn');
 const myCart = document.querySelector('.shopping-cart-container');
 
 cartBtn.addEventListener('click', () => {
@@ -100,61 +108,83 @@ document.addEventListener('touchstart', closeNavMenuIfOutside);
 //? ADD TO THE CART END
 
 
-//? MODAL PRODUCT START
-// const parfumData = {
-//     "Golden Honey": {
-//         description: "Una fragancia cálida y envolvente con dulces notas de miel dorada, vainilla suave y un fondo ambarado que deja una estela irresistible."
-//     },
-//     "Amber Bloom": {
-//         description: "Flores luminosas se mezclan con ámbar cálido y un toque cremoso, creando un aroma elegante, delicado y profundamente femenino."
-//     },
-//     "Citrus Aura": {
-//         description: "Explosión vibrante de cítricos frescos con un corazón ligero y chispeante que transmite energía, limpieza y vitalidad."
-//     },
-//     "Velvet Rose": {
-//         description: "Rosa aterciopelada en su máxima expresión, acompañada de suaves notas dulces y un fondo seductor que envuelve la piel con elegancia."
-//     },
-//     "Pure Vanilla": {
-//         description: "Vainilla cremosa y reconfortante con matices dulces y suaves que evocan calidez, ternura y sofisticación discreta."
-//     },
-//     "Ocean Mist": {
-//         description: "Fresco como la brisa marina, mezcla notas acuáticas con un toque limpio y ligero que recuerda al aire del océano al amanecer."
-//     },
-//     "Soft Blossom": {
-//         description: "Delicadas flores primaverales con un matiz empolvado y suave, perfecto para una sensación ligera, femenina y romántica."
-//     },
-//     "Fresh Linen": {
-//         description: "Aroma limpio y reconfortante que evoca sábanas recién lavadas, con notas suaves y aireadas que transmiten pureza y frescura."
-//     },
-//     "White Musk": {
-//         description: "Almizcle blanco suave y envolvente con un carácter limpio, sensual y elegante que se funde naturalmente con la piel."
-//     },
-//     "Pure Air": {
-//         description: "Ligero y transparente, combina notas frescas y etéreas que evocan aire puro, libertad y una sensación de bienestar natural."
-//     },
-//     "Morning Dew": {
-//         description: "Fresco y delicado como el rocío al amanecer, con toques verdes y florales suaves que despiertan los sentidos con sutileza."
-//     },
-// };
+// ? MODAL PRODUCT START
+const parfumData = {
+    "Golden Honey": {
+        description: "Una fragancia cálida y envolvente con dulces notas de miel dorada, vainilla suave y un fondo ambarado que deja una estela irresistible."
+    },
+    "Amber Bloom": {
+        description: "Flores luminosas se mezclan con ámbar cálido y un toque cremoso, creando un aroma elegante, delicado y profundamente femenino."
+    },
+    "Citrus Aura": {
+        description: "Explosión vibrante de cítricos frescos con un corazón ligero y chispeante que transmite energía, limpieza y vitalidad."
+    },
+    "Velvet Rose": {
+        description: "Rosa aterciopelada en su máxima expresión, acompañada de suaves notas dulces y un fondo seductor que envuelve la piel con elegancia."
+    },
+    "Midnight Oud": {
+        description: "Misterioso y sofisticado, combina la riqueza del oud con matices oscuros y amaderados, creando una fragancia intensa y seductora para la noche."
+    },
+    "Pure Vanilla": {
+        description: "Vainilla cremosa y reconfortante con matices dulces y suaves que evocan calidez, ternura y sofisticación discreta."
+    },
+    "Ocean Mist": {
+        description: "Fresco como la brisa marina, mezcla notas acuáticas con un toque limpio y ligero que recuerda al aire del océano al amanecer."
+    },
+    "Soft Blossom": {
+        description: "Delicadas flores primaverales con un matiz empolvado y suave, perfecto para una sensación ligera, femenina y romántica."
+    },
+    "Fresh Linen": {
+        description: "Aroma limpio y reconfortante que evoca sábanas recién lavadas, con notas suaves y aireadas que transmiten pureza y frescura."
+    },
+    "White Musk": {
+        description: "Almizcle blanco suave y envolvente con un carácter limpio, sensual y elegante que se funde naturalmente con la piel."
+    },
+    "Pure Air": {
+        description: "Ligero y transparente, combina notas frescas y etéreas que evocan aire puro, libertad y una sensación de bienestar natural."
+    },
+    "Morning Dew": {
+        description: "Fresco y delicado como el rocío al amanecer, con toques verdes y florales suaves que despiertan los sentidos con sutileza."
+    },
+};
 
 document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('.modal-product');
+    const modalOverlay = document.querySelector('.modal-overlay-product');
     const cardParfum = document.querySelectorAll('article');
-    const modalOverlay = document.querySelectorAll('.modal-overlay-product');
 
-    const modalImg = document.querySelector('modalImg');
-    const modalTitle = document.querySelector('modalTitle');
-    const modalDesc = document.querySelector('modalDesc');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+
+    const btnCloseModal = document.querySelector('.btn-close');
+
     
     cardParfum.forEach(card => {
         card.addEventListener('click', () => {
             const img = card.querySelector('img').src;
             const title = card.querySelector('h3').textContent;
-            const desc = card.querySelector('p').textContent;
-
+            const desc = parfumData[title] ? parfumData[title].description : "Descripción no disponible.";
+            
             modalImg.src = img;
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
+
+            modalOverlay.classList.add('active');
+            modal.classList.add('active');
         });
+    });
+
+    btnCloseModal.addEventListener('click', () => {
+        modal.classList.remove('active');
+        modalOverlay.classList.remove('active');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal-overlay-product')) {
+            modalOverlay.classList.remove('active');
+            modal.classList.remove('active');
+        }
     });
 });
 //? MODAL PRODUCT END
